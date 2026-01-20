@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Output files
+output/
+*.png
+*.pdf
+*.txt
+
+# Data files (uncomment if you want to exclude data)
+# data/
+# *.dpt
+# *.csv
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Configuration (uncomment if you want to exclude personal configs)
+# config.json

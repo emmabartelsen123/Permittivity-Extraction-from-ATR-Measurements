@@ -1,0 +1,70 @@
+{
+    "material_constants": {
+        "name": "ScN",
+        "epsilon_inf": 12.8,
+        "omega_TO": 359.0,
+        "omega_LO": 677.0,
+        "description": "High-frequency dielectric constant and phonon frequencies (cm^-1). These are typically fixed from literature or separate measurements."
+    },
+    "atr_setup": {
+        "prism_material": "ZnSe",
+        "prism_index": 2.4,
+        "incident_angle_deg": 60,
+        "description": "ATR experimental configuration. Prism index is the refractive index at the measurement wavelength range."
+    },
+    "samples": {
+        "sample_A": {
+            "label": "Sample A - High-doped p-type",
+            "thickness_nm": 370,
+            "carrier_concentration_cm3": 1.8e20,
+            "mobility_cm2Vs": 10,
+            "carrier_type": "p-type",
+            "effective_mass_me": 0.8,
+            "data_directory": "data/sample_A",
+            "data_pattern": "*.dpt",
+            "fit_range_cm1": [300, 1000],
+            "plot_range_cm1": [200, 1200]
+        },
+        "sample_B": {
+            "label": "Sample B - Low-doped p-type",
+            "thickness_nm": 135,
+            "carrier_concentration_cm3": 8.4e18,
+            "mobility_cm2Vs": 1.2,
+            "carrier_type": "p-type",
+            "effective_mass_me": 0.8,
+            "data_directory": "data/sample_B",
+            "data_pattern": "*.dpt",
+            "fit_range_cm1": [300, 1000],
+            "plot_range_cm1": [200, 1200]
+        },
+        "sample_C": {
+            "label": "Sample C - n-type",
+            "thickness_nm": 135,
+            "carrier_concentration_cm3": 6.8e20,
+            "mobility_cm2Vs": 73.9,
+            "carrier_type": "n-type",
+            "effective_mass_me": 0.39,
+            "data_directory": "data/sample_C",
+            "data_pattern": "*.dpt",
+            "fit_range_cm1": [2000, 5000],
+            "plot_range_cm1": [500, 5000]
+        }
+    },
+    "fitting_options": {
+        "max_iterations": 500,
+        "population_size": 15,
+        "tolerance": 1e-6,
+        "random_seed": 42,
+        "omega_p_bounds_factor": [0.5, 2.0],
+        "gamma_p_bounds_factor": [0.3, 3.0],
+        "S_bounds": [0.5, 10.0],
+        "gamma_ph_bounds": [10.0, 100.0],
+        "description": "Optimization parameters. Bounds_factor values multiply the initial guess from Hall measurements. Increase max_iterations or population_size if convergence is poor."
+    },
+    "output": {
+        "directory": "output",
+        "save_permittivity": true,
+        "save_plots": true,
+        "plot_dpi": 150
+    }
+}
